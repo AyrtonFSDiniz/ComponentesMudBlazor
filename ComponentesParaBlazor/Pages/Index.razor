@@ -1,0 +1,25 @@
+﻿@page "/"
+
+<PageTitle>Exemplo de personalizado</PageTitle>
+
+<MudGrid>
+        <MudItem md="4"
+                 sm="12"
+                 xs="12">
+            <DataCard BarColor="@Colors.Blue.Default"
+                      ChartId="chartTwo"
+                      IncreaseDecrease="IncreaseDecreaseInstalls"
+                      LastTenDays="_lastTenDaysInstalls"
+                      Title="Total de instalações"
+                      Total="TotalInstalls" />
+        </MudItem>
+    </MudGrid>
+
+
+@code{
+
+    private const int TotalInstalls = 1000;
+    private const double IncreaseDecreaseInstalls = 8;
+
+    private readonly List<int> _lastTenDaysInstalls = new() {10, 20, 30, 40, 50, 60, 70, 80, 90};
+}
